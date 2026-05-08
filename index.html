@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Seviyorum</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 400px; }
+        h1 { color: #d81b60; }
+        .heart { font-size: 50px; color: #e91e63; animation: beat .3s infinite alternate; }
+        @keyframes beat { to { transform: scale(1.1); } }
+        .btn { padding: 12px 20px; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; margin: 10px; display: inline-block; text-decoration: none; }
+        .btn-yes { background: #4caf50; color: white; }
+        .btn-no { background: #f44336; color: white; position: relative; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤</div>
+        <h1>Lütfen Dinle...</h1>
+        <p>Seni kırdığım için çok üzgünüm. Seninle olan her anım benim için çok kıymetli. Yeni bir sayfa açalım mı?</p>
+        <button class="btn btn-yes" onclick="alert('Dünyanın en mutlu insanı yaptın beni! ❤️')">Evet, Barışalım!</button>
+        <button class="btn btn-no" onmouseover="moveButton(this)">Hayır</button>
+    </div>
+    <script>
+        function moveButton(btn) {
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px'; btn.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
